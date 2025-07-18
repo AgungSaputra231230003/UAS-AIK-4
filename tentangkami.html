@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Kelompok 7</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to right, #f3e5f5, #e1f5fe);
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(135deg, #6a1b9a, #283593);
+        padding: 40px 20px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.8rem;
+      }
+
+      header p {
+        margin-top: 10px;
+        font-size: 1.1rem;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #4a148c;
+        border-bottom: 2px solid #ce93d8;
+        padding-bottom: 5px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        background-color: #f3e5f5;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+
+      li:hover {
+        background-color: #e1bee7;
+      }
+
+      .info {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e1f5fe;
+        border-left: 4px solid #03a9f4;
+        border-radius: 5px;
+      }
+
+      .deskripsi {
+        margin-top: 30px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        background-color: #f0f4c3;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .kampus-img {
+        display: block;
+        max-width: 330px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .sosial {
+        margin-top: 30px;
+      }
+
+      .sosial a {
+        text-decoration: none;
+        margin-right: 15px;
+        color: #6a1b9a;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .sosial a:hover {
+        color: #283593;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 18px;
+        background-color: #6a1b9a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #4a148c;
+      }
+
+      footer {
+        background-color: #f3e5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        main {
+          margin: 20px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tentang Kami</h1>
+      <p>Website Proyek Akhir - Kelompok 7</p>
+    </header>
+
+    <main>
+      <h2>👥 Anggota Kelompok</h2>
+      <ul>
+        <li>Agung Saputra</li>
+        <li>Muhammad Borneo Satria Prawira Putra</li>
+        <li>Muhammad Ikhsan</li>
+        <li>Mochammad Maril Livio</li>
+        <li>Rizki Yuhendra</li>
+      </ul>
+
+      <h2>👨‍🏫 Dosen Pembimbing</h2>
+      <div class="info">Dosen pengampu: Dedy Susanto, S.Pdi., M.M.</div>
+
+      <h2>🎓 Kampus</h2>
+      <div class="info">Universitas Muhammadiyah Pontianak</div>
+
+      <img src="ump.png" alt="Logo Kampus" class="kampus-img" />
+
+      <div class="deskripsi">
+        Proyek akhir ini dibuat untuk memenuhi tugas mata kuliah Al-Islam dan Kemuhammadiyahan (AIK). Website ini dikembangkan oleh Kelompok 7 sebagai sarana dakwah digital, yang memadukan nilai-nilai
+        keislaman dengan teknologi informasi, serta melatih keterampilan dasar dalam pengembangan web menggunakan HTML, CSS, dan JavaScript.
+      </div>
+
+      <div class="sosial">
+        <h2>🔗 Sosial Media Resmi UMP</h2>
+        <a href="https://www.instagram.com/unmuhpnk.official/" target="_blank">Instagram Universitas Muhammadiyah Pontianak</a>
+        <a href="https://www.youtube.com/@UniversitasMuhammadiyahPontianak" target="_blank">YouTube Universitas Muhammadiyah Pontianak</a>
+      </div>
+
+      <!-- <button onclick="tampilkanInfo()">Lihat Info Kampus</button> -->
+       <a href="./info-kampus.html">
+        <button>Lihat Info Kampus</button>
+       </a>
+    </main>
+
+    <footer>&copy; 2025 Kelompok 7 - Universitas Muhammadiyah Pontianak | All rights reserved.</footer>
+
+    <script>
+      function tampilkanInfo() {
+        alert("Universitas Muhammadiyah Pontianak aktif dalam dakwah teknologi, khususnya di bidang Sistem Informasi. Mahasiswa dibekali ilmu praktis dan akademis.");
+      }
+    </script>
+  </body>
+</html>
