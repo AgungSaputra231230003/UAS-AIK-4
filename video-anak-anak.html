@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Panduan Sholat - Muhammadiyah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>" />
+    <style>
+      .video-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-item {
+        transition: all 0.3s ease;
+      }
+      .video-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-amber-50 font-sans">
+    <!-- Header -->
+    <header class="bg-green-800 text-white py-4 px-6 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="./index-anak-anak.html" class="mr-4 hover:text-amber-300">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <h1 class="text-xl md:text-2xl font-bold">Video Panduan Sholat</h1>
+        </div>
+        <nav>
+          <a href="./index.html" class="hover:text-amber-300">
+            <i class="fas fa-home"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Video Player Section -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold text-green-800 mb-6 flex items-center justify-center"><i class="fas fa-video mr-2"></i> Video Panduan Gerakan Sholat</h2>
+
+          <div class="video-container">
+            <video id="main-video" class="w-full rounded-lg shadow-lg" controls>
+              <source src="" type="video/mp4" />
+              Browser Anda tidak mendukung tag video.
+            </video>
+
+            <div class="mt-6">
+              <h3 id="video-title" class="text-lg font-semibold text-green-800 text-center"></h3>
+              <p id="video-desc" class="text-gray-600 text-center mt-2"></p>
+            </div>
+          </div>
+
+          <!-- Video List -->
+          <div class="mt-8 gap-4 justify-center flex">
+            <a href="./video-dewasa.html">
+              <div
+                class=" bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
+                data-video="https://assets.codepen.io/3364143/sample.mp4"
+                data-title="Takbiratul Ihram"
+                data-desc="Gerakan memulai sholat"
+              >
+                <div class="relative pb-[56.25%] mb-3 bg-gray-200 rounded-lg overflow-hidden">
+                  <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-700 text-3xl"></i>
+                </div>
+                <h4 class="font-semibold text-green-800">Sholat Dewasa</h4>
+                <p class="text-sm text-gray-600">Panduan Gerakan Sholat Dewasa</p>
+              </div>
+            </a>
+
+            <!-- Tambahkan video lainnya dengan pola yang sama -->
+            <a href="">
+              <div
+                class="video-item bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
+                data-video="https://assets.codepen.io/3364143/sample.mp4"
+                data-title="Ruku'"
+                data-desc="Gerakan membungkuk"
+              >
+                <div class="relative pb-[56.25%] mb-3 bg-gray-200 rounded-lg overflow-hidden">
+                  <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-700 text-3xl"></i>
+                </div>
+                <h4 class="font-semibold text-green-800">Sholat anak-anak</h4>
+                <p class="text-sm text-gray-600">Panduan Sholat Untuk Anak-Anak</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8 mt-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <h3 class="text-xl font-bold mb-2">Tata Cara Sholat Muhammadiyah</h3>
+            <p class="text-green-200">Berdasarkan Himpunan Putusan Tarjih</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+          </div>
+        </div>
+        <div class="border-t border-green-800 mt-6 pt-6 text-center text-green-300">
+          <p>&copy; 2023 Project Web Tata Cara Sholat - Muhammadiyah</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const videoItems = document.querySelectorAll('.video-item');
+        const mainVideo = document.getElementById('main-video');
+        const videoTitle = document.getElementById('video-title');
+        const videoDesc = document.getElementById('video-desc');
+
+        // Set video pertama sebagai default
+        if (videoItems.length > 0) {
+          const firstVideo = videoItems[0];
+          mainVideo.src = firstVideo.dataset.video;
+          videoTitle.textContent = firstVideo.dataset.title;
+          videoDesc.textContent = firstVideo.dataset.desc;
+          firstVideo.classList.add('border-green-500', 'bg-green-100');
+        }
+
+        // Event listener untuk video items
+        videoItems.forEach((item) => {
+          item.addEventListener('click', function () {
+            mainVideo.src = this.dataset.video;
+            videoTitle.textContent = this.dataset.title;
+            videoDesc.textContent = this.dataset.desc;
+            mainVideo.load();
+
+            // Update active item
+            videoItems.forEach((i) => i.classList.remove('border-green-500', 'bg-green-100'));
+            this.classList.add('border-green-500', 'bg-green-100');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

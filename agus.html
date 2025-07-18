@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tata Cara Sholat - HTP Muhammadiyah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      :root {
+        --primary-color: #1a5d1a;
+        --secondary-color: #f8f9fa;
+        --accent-color: #d4edda;
+        --light-green: #e9f5e9;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+        padding-top: 60px;
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--primary-color), #2e8b57);
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .logo i {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+      }
+
+      .card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 25px;
+        border: none;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-header {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+        padding: 1rem;
+        border: none;
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .step-number {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 36px;
+        margin-right: 12px;
+        font-weight: bold;
+      }
+
+      .step-content {
+        margin-left: 48px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #eaeaea;
+      }
+
+      .step-content:last-child {
+        border-bottom: none;
+      }
+
+      .arabic-text {
+        font-family: "Traditional Arabic", "Scheherazade New", serif;
+        font-size: 1.8rem;
+        text-align: right;
+        line-height: 2.5;
+        color: #1a5d1a;
+        margin: 15px 0;
+        direction: rtl;
+      }
+
+      .translation {
+        font-style: italic;
+        color: #555;
+        border-left: 3px solid var(--primary-color);
+        padding-left: 15px;
+        margin: 15px 0;
+      }
+
+      .footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .sources {
+        background-color: var(--accent-color);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 30px;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 10px 25px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: #134213;
+        transform: scale(1.05);
+      }
+
+      .counter-box {
+        background-color: var(--accent-color);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .tab-content {
+        padding: 20px;
+        background-color: white;
+        border-radius: 0 0 12px 12px;
+      }
+
+      .nav-tabs .nav-link {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .nav-tabs .nav-link.active {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+      }
+
+      .audio-player {
+        width: 100%;
+        margin: 15px 0;
+        border-radius: 8px;
+        background-color: var(--light-green);
+        padding: 15px;
+      }
+
+      .prayer-steps {
+        background-color: var(--light-green);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .step-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .step-title i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-right: 10px;
+      }
+
+      .video-container {
+        position: relative;
+        padding-top: 56.25%;
+        background-color: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 20px;
+      }
+
+      .video-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #1a5d1a, #2e8b57);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .video-placeholder i {
+        font-size: 5rem;
+        margin-bottom: 20px;
+      }
+
+      .video-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .navigation-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .carousel-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .carousel-item {
+        height: 400px;
+        background: linear-gradient(45deg, #1a5d1a, #2e8b57);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+      }
+
+      .carousel-control-prev {
+        left: 20px;
+      }
+      .carousel-control-next {
+        right: 20px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        background-color: var(--primary-color);
+        opacity: 1;
+      }
+
+      .prayer-text-container {
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .prayer-title {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--light-green);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      .latin-text {
+        font-size: 1.2rem;
+        color: #555;
+        margin: 10px 0;
+        font-weight: 500;
+      }
+
+      .prayer-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        gap: 10px;
+      }
+
+      .counter-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ddd;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .counter-dot.active {
+        background-color: var(--primary-color);
+        transform: scale(1.2);
+      }
+      
+      .movement-container {
+        background-color: var(--light-green);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 30px;
+      }
+      
+      .movement-title {
+        display: flex;
+        align-items: center;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+      
+      .movement-title i {
+        font-size: 1.8rem;
+        margin-right: 15px;
+      }
+      
+      /* Carousel Styles */
+      .movement-carousel {
+        margin-top: 30px;
+      }
+      
+      .movement-carousel .carousel-inner {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+      
+      .movement-carousel-item {
+        height: 450px;
+        background-color: var(--light-green);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        text-align: center;
+      }
+      
+      .movement-carousel-img {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(45deg, #1a5d1a, #2e8b57);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+      
+      .movement-carousel-content {
+        max-width: 90%;
+      }
+      
+      .movement-carousel-name {
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+      
+      .movement-carousel-description {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+      
+      .movement-carousel .carousel-control-prev,
+      .movement-carousel .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(26, 93, 26, 0.8);
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+      
+      .movement-carousel .carousel-control-prev {
+        left: 20px;
+      }
+      
+      .movement-carousel .carousel-control-next {
+        right: 20px;
+      }
+      
+      .movement-carousel .carousel-control-prev:hover,
+      .movement-carousel .carousel-control-next:hover {
+        background-color: var(--primary-color);
+      }
+      
+      .movement-carousel-indicators {
+        bottom: -40px;
+      }
+      
+      .movement-carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+      }
+      
+      .movement-carousel-indicators button.active {
+        background-color: var(--primary-color);
+        transform: scale(1.2);
+      }
+
+      .kids-movement {
+        background-color: #f0f8ff;
+        border-left: 4px solid #4da6ff;
+      }
+      
+      .kids-movement .movement-name {
+        color: #4da6ff;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      @media (max-width: 991.98px) {
+        .desktop-nav {
+          display: block;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .mobile-nav-toggle {
+          display: none;
+        }
+        .nav_clear {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .step-content {
+          margin-left: 0;
+          padding-left: 15px;
+        }
+
+        .arabic-text {
+          font-size: 1.5rem;
+        }
+
+        .carousel-item {
+          height: 300px;
+          font-size: 1.5rem;
+        }
+        
+        .movement-carousel-item {
+          height: 400px;
+          padding: 20px;
+        }
+        
+        .movement-carousel-img {
+          height: 200px;
+          font-size: 1.5rem;
+        }
+        
+        .movement-carousel-name {
+          font-size: 1.1rem;
+        }
+        
+        .movement-carousel-description {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Video Section Styles */
+      .video-section {
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+      
+      .video-title-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .video-title-section h3 {
+        color: var(--primary-color);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+      
+      .video-title-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+      
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+      }
+      
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      .video-description {
+        background-color: var(--light-green);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="logo-container">
+              <div class="logo">
+                <i class="fas fa-mosque"></i>
+              </div>
+              <a class="navbar-brand text-white fw-bold" href="#">Tata Cara Sholat</a>
+            </div>
+            <div class="collapse navbar-collapse desktop-nav" id="navbarNav">
+              <ul class="navbar-nav ms-auto nav_clear">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#dewasa">Sholat Dewasa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#anak">Sholat Anak</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+      <!-- Introduction -->
+      <section class="text-center mb-5">
+        <h1 class="display-5 fw-bold mb-3">Tata Cara Sholat Sesuai HTP Muhammadiyah</h1>
+        <p class="lead">Panduan lengkap tata cara sholat berdasarkan Himpunan Putusan Tarjih Muhammadiyah untuk mata kuliah AIK4</p>
+      </section>
+
+      <!-- Tab Navigation -->
+      <div class="card">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="dewasa-tab" data-bs-toggle="tab" data-bs-target="#dewasa" type="button" role="tab"><i class="fas fa-person me-2"></i>Sholat Dewasa</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="anak-tab" data-bs-toggle="tab" data-bs-target="#anak" type="button" role="tab"><i class="fas fa-child me-2"></i>Sholat Anak</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <!-- Sholat Dewasa -->
+          <div class="tab-pane fade show active" id="dewasa" role="tabpanel">
+            <h2 class="section-title">Tata Cara Sholat untuk Orang Dewasa</h2>
+            <p>Berikut panduan lengkap tata cara sholat sesuai Himpunan Putusan Tarjih Muhammadiyah untuk orang dewasa:</p>
+
+            <div class="prayer-steps">
+              <div class="step-title">
+                <i class="fas fa-volume-up"></i>
+                <h4 class="mb-0">Audio Panduan Sholat</h4>
+              </div>
+              <div class="audio-player">
+                <p class="mb-2"><strong>Niat Sholat Subuh</strong></p>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-sm btn-outline-primary me-2">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <div class="progress w-100" style="height: 10px">
+                    <div class="progress-bar" role="progressbar" style="width: 25%"></div>
+                  </div>
+                  <span class="ms-2">1:30 / 6:00</span>
+                </div>
+                <div class="mt-3 text-center">
+                  <small>File suara akan ditambahkan nanti</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header"><i class="fas fa-list-ol me-2"></i>Urutan Sholat</div>
+                  <div class="card-body">
+                    <ol class="list-group list-group-numbered">
+                      <li class="list-group-item">Niat dalam hati</li>
+                      <li class="list-group-item">Takbiratul Ihram</li>
+                      <li class="list-group-item">Doa Iftitah</li>
+                      <li class="list-group-item">Membaca Al-Fatihah</li>
+                      <li class="list-group-item">Rukuk</li>
+                      <li class="list-group-item">I'tidal</li>
+                      <li class="list-group-item">Sujud</li>
+                      <li class="list-group-item">Duduk di antara dua sujud</li>
+                      <li class="list-group-item">Tasyahud Akhir</li>
+                      <li class="list-group-item">Salam</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header"><i class="fas fa-lightbulb me-2"></i>Catatan Penting</div>
+                  <div class="card-body">
+                    <ul>
+                      <li>Bacaan dalam sholat menggunakan bahasa Arab</li>
+                      <li>Qunut hanya pada sholat Subuh</li>
+                      <li>Tangan bersedekap di bawah dada</li>
+                      <li>Duduk iftirasy (antara dua sujud) dan tawaruk (tasyahud akhir)</li>
+                      <li>Salam kedua menoleh ke kiri</li>
+                      <li>Wajib menghadap kiblat</li>
+                      <li>Suci dari hadats besar dan kecil</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Video Tutorial Sholat Dewasa -->
+            <div class="video-section">
+              <div class="video-title-section">
+                <h3><i class="fas fa-video me-2"></i>Video Tutorial Sholat untuk Dewasa</h3>
+                <p>Tonton video berikut untuk mempelajari tata cara sholat yang benar sesuai HTP Muhammadiyah</p>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_DEWASA_1" 
+                            title="Tutorial Sholat Subuh - Muhammadiyah" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                  </div>
+                  <div class="video-description">
+                    <h5>Sholat Subuh Lengkap</h5>
+                    <p>Video tutorial sholat Subuh sesuai panduan Muhammadiyah, termasuk bacaan qunut dan semua gerakan dengan detail.</p>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_DEWASA_2" 
+                            title="Gerakan Sholat Lengkap - Muhammadiyah" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                  </div>
+                  <div class="video-description">
+                    <h5>Detail Gerakan Sholat</h5>
+                    <p>Penjelasan rinci setiap gerakan sholat mulai dari takbiratul ihram sampai salam menurut HTP Muhammadiyah.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Gambar Gerakan untuk Dewasa (Carousel) -->
+            <div class="movement-container">
+              <div class="movement-title">
+                <i class="fas fa-images"></i>
+                <h3>Gambar Gerakan Sholat untuk Dewasa</h3>
+              </div>
+              
+              <div class="movement-carousel">
+                <div id="movementCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <!-- Item 1 - Takbiratul Ihram -->
+                    <div class="carousel-item active">
+                      <div class="movement-carousel-item">
+                        <div class="movement-carousel-img">Takbiratul Ihram</div>
+                        <div class="movement-carousel-content">
+                          <div class="movement-carousel-name">Takbiratul Ihram</div>
+                          <div class="movement-carousel-description">
+                            <p>Mengangkat kedua tangan sejajar dengan bahu atau telinga dengan jari-jari rapat dan menghadap kiblat.</p>
+                            <p><strong>Bacaan:</strong> الله أكبر (Allahu Akbar)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Item 2 - Rukuk -->
+                    <div class="carousel-item">
+                      <div class="movement-carousel-item">
+                        <div class="movement-carousel-img">Rukuk</div>
+                        <div class="movement-carousel-content">
+                          <div class="movement-carousel-name">Rukuk</div>
+                          <div class="movement-carousel-description">
+                            <p>Membungkukkan badan dengan punggung rata, tangan memegang lutut, dan kepala sejajar dengan punggung.</p>
+                            <p><strong>Bacaan:</strong> سُبْحَانَ رَبِّيَ الْعَظِيمِ (Subhana Rabbiyal 'Adhim)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Item 3 - Sujud -->
+                    <div class="carousel-item">
+                      <div class="movement-carousel-item">
+                        <div class="movement-carousel-img">Sujud</div>
+                        <div class="movement-carousel-content">
+                          <div class="movement-carousel-name">Sujud</div>
+                          <div class="movement-carousel-description">
+                            <p>Meletakkan dahi, hidung, kedua telapak tangan, kedua lutut, dan ujung jari kaki di lantai.</p>
+                            <p><strong>Bacaan:</strong> سُبْحَانَ رَبِّيَ الْأَعْلَى (Subhana Rabbiyal A'la)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Item 4 - Duduk Tasyahud -->
+                    <div class="carousel-item">
+                      <div class="movement-carousel-item">
+                        <div class="movement-carousel-img">Duduk Tasyahud</div>
+                        <div class="movement-carousel-content">
+                          <div class="movement-carousel-name">Duduk Tasyahud</div>
+                          <div class="movement-carousel-description">
+                            <p>Duduk iftirasy (duduk di atas kaki kiri) untuk tasyahud awal dan tawaruk (duduk di atas pantat) untuk tasyahud akhir.</p>
+                            <p><strong>Bacaan:</strong> التحيات لله... (At-Tahiyyatu lillahi...)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Item 5 - Salam -->
+                    <div class="carousel-item">
+                      <div class="movement-carousel-item">
+                        <div class="movement-carousel-img">Salam</div>
+                        <div class="movement-carousel-content">
+                          <div class="movement-carousel-name">Salam</div>
+                          <div class="movement-carousel-description">
+                            <p>Menoleh ke kanan dan ke kiri sambil mengucapkan salam. Menoleh ke kanan lebih dahulu kemudian ke kiri.</p>
+                            <p><strong>Bacaan:</strong> السلام عليكم ورحمة الله (Assalamu alaikum wa rahmatullah)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#movementCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#movementCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                  
+                  <!-- Indicators -->
+                  <div class="carousel-indicators movement-carousel-indicators">
+                    <button type="button" data-bs-target="#movementCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#movementCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#movementCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#movementCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#movementCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sholat Anak -->
+          <div class="tab-pane fade" id="anak" role="tabpanel">
+            <h2 class="section-title">Tata Cara Sholat untuk Anak-anak</h2>
+            <p>Berikut panduan tata cara sholat yang disederhanakan untuk anak-anak sesuai Himpunan Putusan Tarjih Muhammadiyah:</p>
+
+            <div class="prayer-steps">
+              <div class="step-title">
+                <i class="fas fa-volume-up"></i>
+                <h4 class="mb-0">Audio Panduan Sholat Anak</h4>
+              </div>
+              <div class="audio-player">
+                <p class="mb-2"><strong>Niat Sholat untuk Anak</strong></p>
+                <div class="d-flex align-items-center">
+                  <button class="btn btn-sm btn-outline-primary me-2">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <div class="progress w-100" style="height: 10px">
+                    <div class="progress-bar" role="progressbar" style="width: 10%"></div>
+                  </div>
+                  <span class="ms-2">0:45 / 4:30</span>
+                </div>
+                <div class="mt-3 text-center">
+                  <small>File suara akan ditambahkan nanti</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header"><i class="fas fa-child me-2"></i>Panduan Sholat Anak</div>
+                  <div class="card-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">1. Ajarkan gerakan dasar sholat</li>
+                      <li class="list-group-item">2. Gunakan bahasa yang sederhana</li>
+                      <li class="list-group-item">3. Fokus pada bacaan pendek</li>
+                      <li class="list-group-item">4. Ajarkan secara bertahap</li>
+                      <li class="list-group-item">5. Berikan contoh yang baik</li>
+                      <li class="list-group-item">6. Gunakan metode belajar sambil bermain</li>
+                      <li class="list-group-item">7. Berikan pujian dan motivasi</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header"><i class="fas fa-book me-2"></i>Bacaan Sederhana</div>
+                  <div class="card-body">
+                    <div class="arabic-text">الله أكبر</div>
+                    <div class="translation">Allahu Akbar (Allah Maha Besar)</div>
+
+                    <div class="arabic-text">سبحان ربي العظيم</div>
+                    <div class="translation">Subhana Rabbiyal Adhim (Maha Suci Tuhanku Yang Maha Agung)</div>
+
+                    <div class="arabic-text">سمع الله لمن حمده</div>
+                    <div class="translation">Sami'allahu liman hamidah (Allah mendengar hamba yang memuji-Nya)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Video Tutorial Sholat Anak -->
+            <div class="video-section">
+              <div class="video-title-section">
+                <h3><i class="fas fa-video me-2"></i>Video Tutorial Sholat untuk Anak-anak</h3>
+                <p>Video menarik untuk membantu anak belajar sholat dengan cara yang menyenangkan</p>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_ANAK_1" 
+                            title="Belajar Sholat untuk Anak" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                  </div>
+                  <div class="video-description">
+                    <h5>Sholat Seru untuk Anak</h5>
+                    <p>Video animasi yang mengajarkan sholat dengan cara menyenangkan, dilengkapi lagu dan gerakan sederhana.</p>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_ANAK_2" 
+                            title="Gerakan Sholat Anak" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                  </div>
+                  <div class="video-description">
+                    <h5>Belajar Gerakan Sholat</h5>
+                    <p>Panduan praktis gerakan sholat untuk anak dengan penjelasan sederhana dan contoh yang mudah diikuti.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="alert alert-info mt-4">
+                <h5><i class="fas fa-info-circle me-2"></i>Tips Menonton Video dengan Anak</h5>
+                <ul class="mb-0">
+                  <li>Tonton video bersama anak dan ikuti gerakannya</li>
+                  <li>Jeda video untuk mempraktikkan setiap gerakan</li>
+                  <li>Ulangi bagian yang sulit dipahami anak</li>
+                  <li>Buat sesi menonton menjadi aktivitas interaktif</li>
+                  <li>Berikan pujian ketika anak bisa mengikuti gerakan</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Gambar Gerakan untuk Anak -->
+            <div class="movement-container">
+              <div class="movement-title">
+                <i class="fas fa-images"></i>
+                <h3>Gambar Gerakan Sholat untuk Anak-anak</h3>
+              </div>
+              
+              <div class="movement-grid">
+                <div class="movement-card kids-movement">
+                  <div class="movement-img">Takbir Anak</div>
+                  <div class="movement-content">
+                    <div class="movement-name">Takbiratul Ihram</div>
+                    <div class="movement-description">
+                      <p>Anak-anak diajarkan mengangkat tangan dengan santai, tidak perlu terlalu tinggi. Fokus pada sikap badan yang tegak.</p>
+                      <p><strong>Bacaan:</strong> الله أكبر (Allahu Akbar)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="movement-card kids-movement">
+                  <div class="movement-img">Rukuk Anak</div>
+                  <div class="movement-content">
+                    <div class="movement-name">Rukuk</div>
+                    <div class="movement-description">
+                      <p>Anak tidak perlu membungkuk sempurna. Cukup dengan menundukkan badan dan kepala. Tangan bisa memegang lutut atau paha.</p>
+                      <p><strong>Bacaan:</strong> سُبْحَانَ رَبِّيَ الْعَظِيمِ (Subhana Rabbiyal 'Adhim)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="movement-card kids-movement">
+                  <div class="movement-img">Sujud Anak</div>
+                  <div class="movement-content">
+                    <div class="movement-name">Sujud</div>
+                    <div class="movement-description">
+                      <p>Ajarkan anak untuk menempelkan dahi ke lantai. Bisa menggunakan alas yang nyaman. Jari tangan tidak harus rapat.</p>
+                      <p><strong>Bacaan:</strong> سُبْحَانَ رَبِّيَ الْأَعْلَى (Subhana Rabbiyal A'la)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="movement-card kids-movement">
+                  <div class="movement-img">Duduk Anak</div>
+                  <div class="movement-content">
+                    <div class="movement-name">Duduk Tasyahud</div>
+                    <div class="movement-description">
+                      <p>Anak-anak boleh duduk dengan cara yang nyaman. Ajarkan isyarat telunjuk dengan cara sederhana.</p>
+                      <p><strong>Bacaan:</strong> السلام عليك أيها النبي... (Assalamu 'alaika ayyuhan Nabi...)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <h5><i class="fas fa-lightbulb me-2"></i>Tips Mengajarkan Sholat pada Anak</h5>
+                <ul>
+                  <li>Mulai dengan gerakan-gerakan dasar: berdiri, rukuk, sujud</li>
+                  <li>Perkenalkan satu gerakan per hari agar tidak membebani</li>
+                  <li>Gunakan lagu atau nyanyian untuk bacaan sholat</li>
+                  <li>Berikan hadiah kecil ketika anak berhasil melakukan gerakan dengan benar</li>
+                  <li>Jadikan sholat sebagai aktivitas keluarga yang menyenangkan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Information -->
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="counter-box">
+            <i class="fas fa-clock feature-icon"></i>
+            <h3>Waktu Sholat Hari Ini</h3>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subuh:</span>
+                <span>04:15</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Dzuhur:</span>
+                <span>11:45</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Ashar:</span>
+                <span>15:10</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Maghrib:</span>
+                <span>17:50</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Isya:</span>
+                <span>19:05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sources">
+            <h4><i class="fas fa-book me-2"></i>Sumber Referensi</h4>
+            <ul class="mt-3">
+              <li>Himpunan Putusan Tarjih Muhammadiyah</li>
+              <li>Al-Qur'an dan Terjemahan</li>
+              <li>Kitab Fiqih Muhammadiyah</li>
+              <li>Pedoman Sholat Kementerian Agama</li>
+              <li>Buku Saku Ibadah Muhammadiyah</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Tata Cara Sholat Muhammadiyah</h4>
+            <p>
+              <i class="fas fa-chalkboard-teacher me-1"></i>
+              Dosen Pengampu: Dedy Susanto, S.Pdi., M.M.
+            </p>
+            <p>
+              <i class="fas fa-university me-2"></i>
+              Universitas Muhammadiyah Pontianak
+            </p>
+            <p class="mt-2">
+              <i class="fas me-1 fa-users"></i>
+              Anggota Kelompok & NIM :
+              <br />
+              - Agung Saputra | 231230003
+              <br />
+              - Rizki Yuhendra | 231230023
+              <br />
+              - M Maril Livio | 231230065
+              <br />
+              - M Borneo Satria | 231230011
+              <br />
+              - Muhammad Ikhsan | 231230063
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <p>&copy; 2025 - Sistem Informasi</p>
+            <p>Disusun berdasarkan Himpunan Tarjih Muhammadiyah</p>
+            <div class="mt-3">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash;
+        if (hash) {
+          const triggerEl = document.querySelector(`[href="${hash}"]`);
+          if (triggerEl) {
+            new bootstrap.Tab(triggerEl).show();
+          }
+        }
+
+        const tabLinks = document.querySelectorAll('[data-bs-toggle="tab"]');
+        tabLinks.forEach((tab) => {
+          tab.addEventListener("shown.bs.tab", function (e) {
+            window.location.hash = e.target.getAttribute("href");
+          });
+        });
+
+        // Initialize carousel with interval
+        const movementCarousel = new bootstrap.Carousel('#movementCarousel', {
+          interval: 5000, // Change slide every 5 seconds
+          wrap: true // Loop back to first slide after last
+        });
+      });
+    </script>
+  </body>
+</html>
