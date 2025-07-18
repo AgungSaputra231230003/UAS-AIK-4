@@ -47,11 +47,16 @@
           <h2 class="text-xl font-bold text-green-800 mb-6 flex items-center justify-center"><i class="fas fa-video mr-2"></i> Video Panduan Gerakan Sholat</h2>
 
           <div class="video-container">
-            <video id="main-video" class="w-full rounded-lg shadow-lg" controls>
-              <source src="" type="video/mp4" />
-              Browser Anda tidak mendukung tag video.
-            </video>
-
+            <iframe
+              width="850"
+              height="500"
+              src="https://www.youtube.com/embed/cIr7w8hUZxI?si=taQmoqPzInUXqhfu"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
             <div class="mt-6">
               <h3 id="video-title" class="text-lg font-semibold text-green-800 text-center"></h3>
               <p id="video-desc" class="text-gray-600 text-center mt-2"></p>
@@ -61,22 +66,22 @@
           <!-- Video List -->
           <div class="mt-8 gap-4 justify-center flex">
             <div
-              class="video-item bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
-              data-video="Tata Cara dan Bacaan Sholat (Tuntunan Muhammadiyah).mp4"
+              class="video-item bg-green-50 p-4 rounded-lg border border-green-700 cursor-pointer"
+              data-video="https://assets.codepen.io/3364143/sample.mp4"
               data-title="Takbiratul Ihram"
               data-desc="Gerakan memulai sholat"
             >
               <div class="relative pb-[56.25%] mb-3 bg-gray-200 rounded-lg overflow-hidden">
-                <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-700 text-3xl"></i>
+                <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-700 text-3xl "></i>
               </div>
               <h4 class="font-semibold text-green-800">Sholat Dewasa</h4>
               <p class="text-sm text-gray-600">Panduan Gerakan Sholat Dewasa</p>
             </div>
 
             <!-- Tambahkan video lainnya dengan pola yang sama -->
-            <a href="/video-anak-anak.html">
+            <a href="https://agungsaputra231230003.github.io/UAS-AIK-4/video-anak-anak.html">
               <div
-                class="video-item bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
+                class="video-item bg-green-50 p-4 rounded-lg border border-green-200  cursor-pointer"
                 data-video="https://assets.codepen.io/3364143/sample.mp4"
                 data-title="Ruku'"
                 data-desc="Gerakan membungkuk"

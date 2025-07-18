@@ -47,10 +47,20 @@
           <h2 class="text-xl font-bold text-green-800 mb-6 flex items-center justify-center"><i class="fas fa-video mr-2"></i> Video Panduan Gerakan Sholat</h2>
 
           <div class="video-container">
-            <video id="main-video" class="w-full rounded-lg shadow-lg" controls>
+            <!-- <video id="main-video" class="w-full rounded-lg shadow-lg" controls>
               <source src="" type="video/mp4" />
               Browser Anda tidak mendukung tag video.
-            </video>
+            </video> -->
+            <iframe
+              width="850"
+              height="500"
+              src="https://www.youtube.com/embed/2v6xaa19TeI?si=BjTIX_goUoIACXJ2"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
 
             <div class="mt-6">
               <h3 id="video-title" class="text-lg font-semibold text-green-800 text-center"></h3>
@@ -60,9 +70,9 @@
 
           <!-- Video List -->
           <div class="mt-8 gap-4 justify-center flex">
-            <a href="./video-dewasa.html">
+            <a href="https://agungsaputra231230003.github.io/UAS-AIK-4/video-dewasa.html">
               <div
-                class=" bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
+                class="bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
                 data-video="https://assets.codepen.io/3364143/sample.mp4"
                 data-title="Takbiratul Ihram"
                 data-desc="Gerakan memulai sholat"
@@ -78,7 +88,7 @@
             <!-- Tambahkan video lainnya dengan pola yang sama -->
             <a href="">
               <div
-                class="video-item bg-green-50 p-4 rounded-lg border border-green-200 cursor-pointer"
+                class="video-item bg-green-50 p-4 rounded-lg border border-green-700 cursor-pointer"
                 data-video="https://assets.codepen.io/3364143/sample.mp4"
                 data-title="Ruku'"
                 data-desc="Gerakan membungkuk"
