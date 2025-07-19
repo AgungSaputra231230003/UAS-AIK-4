@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tata Cara Sholat - Muhammadiyah</title>
+    <title>Tata Cara Sholat Anak - Muhammadiyah</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>" />
@@ -15,6 +15,7 @@
               primary: '#065f46',
               secondary: '#d1fae5',
               accent: '#d97706',
+              kid: '#3b82f6', // Warna biru untuk anak-anak
             },
           },
         },
@@ -27,11 +28,11 @@
       .gerakan-item:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-color: #065f46 !important;
+        border-color: #3b82f6 !important;
       }
       .gerakan-item.active {
-        border: 2px solid #065f46;
-        background-color: #d1fae5;
+        border: 2px solid #3b82f6;
+        background-color: #dbeafe;
         transform: scale(1.02);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
@@ -42,15 +43,23 @@
       audio::-webkit-media-controls-panel {
         background-color: #fef3c7;
       }
+      .kid-friendly {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .tips-box {
+        background-color: #e0f2fe;
+        border-left: 4px solid #3b82f6;
+      }
     </style>
   </head>
   <body class="bg-amber-50 font-sans">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-purple-800 to-indigo-800 text-white py-4 px-6 shadow-lg">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 px-6 shadow-lg">
       <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="flex items-center mb-4 md:mb-0">
           <i class="fas fa-mosque text-3xl mr-3"></i>
-          <h1 class="text-2xl font-bold">Tata Cara Sholat<br /><span class="text-sm font-normal">Muhammadiyah</span></h1>
+          <h1 class="text-2xl font-bold">Tata Cara Sholat<br /><span class="text-sm font-normal">Untuk Anak-anak</span></h1>
         </div>
         <nav class="flex space-x-4">
           <a href="./index.html" class="hover:text-amber-300 transition"><i class="fas fa-book mr-1"></i>Dewasa</a>
@@ -65,77 +74,94 @@
       <!-- Sidebar Menu - Gerakan Sholat -->
       <aside class="w-full lg:w-1/4 mb-8 lg:mb-0 lg:pr-6">
         <div class="bg-white rounded-xl shadow-lg p-6 sticky top-4">
-          <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-hands-praying mr-2"></i> Gerakan Sholat</h2>
+          <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center"><i class="fas fa-hands-praying mr-2"></i> Gerakan Sholat</h2>
 
           <div class="space-y-3" id="gerakan-container">
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-200 flex items-center cursor-pointer gerakan-item active" data-gerakan="takbir">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item active" data-gerakan="takbir">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Takbiratul Ihram" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Takbiratul Ihram</h3>
+                <h3 class="font-semibold text-blue-800">Takbiratul Ihram</h3>
                 <p class="text-sm text-gray-600">Memulai sholat</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-200 flex items-center cursor-pointer gerakan-item" data-gerakan="berdiri">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="berdiri">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Berdiri" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Berdiri</h3>
+                <h3 class="font-semibold text-blue-800">Berdiri</h3>
                 <p class="text-sm text-gray-600">Sikap awal</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="ruku">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="alfatihah">
+              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Al-Fatihah" class="w-16 h-16 rounded-lg object-cover" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-blue-800">Al-Fatihah</h3>
+                <p class="text-sm text-gray-600">Membaca surah</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="ayat_pendek">
+              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Surah Pendek" class="w-16 h-16 rounded-lg object-cover" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-blue-800">Surah Pendek</h3>
+                <p class="text-sm text-gray-600">Misalnya Ad-Dhuha</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="ruku">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Ruku" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Ruku'</h3>
+                <h3 class="font-semibold text-blue-800">Ruku'</h3>
                 <p class="text-sm text-gray-600">Membungkuk</p>
               </div>
             </div>
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="itidal">
-              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="itidal" class="w-16 h-16 rounded-lg object-cover" />
+
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="itidal">
+              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="I'tidal" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">I'tidal</h3>
+                <h3 class="font-semibold text-blue-800">I'tidal</h3>
                 <p class="text-sm text-gray-600">Berdiri setelah rukuk</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="sujud">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="sujud">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Sujud" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Sujud</h3>
+                <h3 class="font-semibold text-blue-800">Sujud</h3>
                 <p class="text-sm text-gray-600">Bersujud</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="duduk">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="duduk">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Duduk" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Duduk</h3>
-                <p class="text-sm text-gray-600">Duduk di antara dua sujud</p>
+                <h3 class="font-semibold text-blue-800">Duduk</h3>
+                <p class="text-sm text-gray-600">Di antara dua sujud</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="tahiyat">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="tahiyat">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Tahiyat" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Tahiyat Akhir</h3>
+                <h3 class="font-semibold text-blue-800">Tahiyat Akhir</h3>
                 <p class="text-sm text-gray-600">Duduk tasyahud</p>
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="salam">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="salam">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Salam" class="w-16 h-16 rounded-lg object-cover" />
               <div class="ml-3">
-                <h3 class="font-semibold text-purple-800">Salam</h3>
+                <h3 class="font-semibold text-blue-800">Salam</h3>
                 <p class="text-sm text-gray-600">Mengakhiri sholat</p>
               </div>
             </div>
-            <div class="p-3 rounded-lg bg-green-50 border border-purple-800 flex items-center cursor-pointer gerakan-item" data-gerakan="video">
-              <a href="./video-anak-anak.html ">
+            <div class="p-3 rounded-lg bg-blue-50 border border-blue-200 flex items-center cursor-pointer gerakan-item" data-gerakan="video">
+              <a href="https://agungsaputra231230003.github.io/UAS-AIK-4/video-anak.html">
                 <div class="rounded-lg flex items-center" data-gerakan="video">
                   <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" class="w-16 h-16 rounded-lg object-cover" />
                   <div class="ml-3">
-                    <h3 class="font-semibold text-purple-800">Video Tata Cara Sholat</h3>
+                    <h3 class="font-semibold text-blue-800">Video Sholat Anak</h3>
                   </div>
                 </div>
               </a>
@@ -144,7 +170,7 @@
 
           <!-- Waktu Sholat Info -->
           <div class="mt-8 bg-amber-100 rounded-xl p-4 border border-amber-300">
-            <h3 class="font-bold text-purple-800 flex items-center mb-2"><i class="fas fa-clock mr-2"></i> Waktu Sholat</h3>
+            <h3 class="font-bold text-blue-800 flex items-center mb-2"><i class="fas fa-clock mr-2"></i> Waktu Sholat</h3>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between">
                 <span>Subuh:</span>
@@ -182,8 +208,8 @@
         <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
-              <h2 class="text-2xl font-bold text-purple-800">Tata Cara Sholat</h2>
-              <p class="text-gray-600 mt-1">Panduan lengkap gerakan sholat menurut Muhammadiyah</p>
+              <h2 class="text-2xl font-bold text-blue-800">Tata Cara Sholat Anak</h2>
+              <p class="text-gray-600 mt-1">Panduan mudah sholat untuk anak-anak</p>
             </div>
           </div>
         </div>
@@ -191,7 +217,7 @@
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <!-- Image Gallery Section -->
           <div class="p-4 border-b">
-            <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-images mr-2"></i> Galeri Gerakan Sholat</h2>
+            <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center"><i class="fas fa-images mr-2"></i> Gambar Gerakan Sholat</h2>
             <div class="flex justify-center">
               <div class="bg-white p-2 rounded-lg shadow">
                 <img id="current-image" src="" alt="Gerakan Sholat" class="w-80 h-80 object-cover rounded-lg" />
@@ -202,19 +228,12 @@
 
           <!-- Audio Player Section -->
           <div class="p-6 border-b">
-            <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-volume-up mr-2"></i> Panduan Audio Sholat</h2>
-            <div class="md:grid-cols-2">
-              <!-- <div class="bg-amber-100 rounded-lg p-4">
-                <h3 class="font-bold text-purple-800 flex items-center"><i class="fas fa-male mr-2"></i> Dewasa (Pria)</h3>
-                <audio controls class="w-full mt-2">
-                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
-                  Browser tidak mendukung audio.
-                </audio>
-              </div> -->
+            <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center"><i class="fas fa-volume-up mr-2"></i> Panduan Audio Sholat</h2>
+            <div class="md:grid-cols-2 gap-4">
               <div class="bg-amber-100 rounded-lg p-4">
-                <h3 class="font-bold text-purple-800 flex items-center pl-5"><i class="fas fa-child mr-2"></i> Anak-anak</h3>
-                <audio controls class="w-full mt-2">
-                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3" />
+                <h3 class="font-bold text-blue-800 flex items-center pl-5"><i class="fas fa-child mr-2"></i> Untuk Anak-anak</h3>
+                <audio id="audio-player" controls class="w-full mt-2">
+                  <source src="" type="audio/mp3" />
                   Browser tidak mendukung audio.
                 </audio>
               </div>
@@ -223,14 +242,18 @@
 
           <!-- Navigation Buttons -->
           <div class="p-6 flex justify-between">
-            <button id="prev-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-gradient-to-r from-purple-800 to-indigo-800 text-white px-6 py-3 rounded-lg flex items-center transition"><i class="fas fa-arrow-left mr-2"></i> Sebelumnya</button>
-            <button id="next-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-gradient-to-r from-purple-800 to-indigo-800 text-white px-6 py-3 rounded-lg flex items-center transition">Selanjutnya <i class="fas fa-arrow-right ml-2"></i></button>
+            <button id="prev-btn" class="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-6 py-3 rounded-lg flex items-center transition">
+              <i class="fas fa-arrow-left mr-2"></i> Sebelumnya
+            </button>
+            <button id="next-btn" class="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-6 py-3 rounded-lg flex items-center transition">
+              Selanjutnya <i class="fas fa-arrow-right ml-2"></i>
+            </button>
           </div>
         </div>
 
         <!-- Tata Cara Sholat Section -->
         <div class="mt-8 bg-white rounded-xl shadow-lg p-6">
-          <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-book-open mr-2"></i> Tata Cara Sholat Menurut Tarjih Muhammadiyah</h2>
+          <h2 class="text-xl font-bold text-blue-800 mb-4 flex items-center"><i class="fas fa-book-open mr-2"></i> Cara Sholat Untuk Anak-anak</h2>
           <div class="space-y-4" id="penjelasan-container">
             <div class="p-4 bg-green-50 rounded-lg penjelasan-item" data-gerakan="takbir">
               <h3 class="font-bold text-purple-800">1. Takbiratul Ihram</h3>
@@ -250,6 +273,38 @@
               <p>
                 Alla-humma ba-id baini-wa baina khatha-ya-ya kama-ba-adta bainal masyriqi wal maghrib. Alla-humma naqqini- minal khatha-ya- kama-yunaqqats tsaubul abyadlu minad danas. Alla-hummaghsil
                 khatha-ya-ya bilma-i wats tsalji wal barad.
+              </p>
+            </div>
+            <!--  -->
+            <div class="p-4 bg-green-50 rounded-lg penjelasan-item" data-gerakan="alfatihah" style="display: none">
+              <h3 class="font-bold text-purple-800">3. Al-fatihah</h3>
+              <p class="mt-2">Berdiri tegak dan membaca surah Al-fatihah.</p>
+              <br />
+              <p>
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ الرَّحْمَنِ الرَّحِيمِ مَالِكِ يَوْمِ الدِّينِ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ صِرَاطَ الَّذِينَ
+                أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+              </p>
+              <br />
+              <p><b>Latin</b></p>
+              <p>
+                Alhamdu lillahi rabbil 'alamin. Arrahmanirrahim. Maliki yawmiddin. Iyyaka na'budu wa iyyaka nasta'in. Ihdinas-siratal-mustaqim. Siratal-ladhina an'amta 'alayhim ghayril-maghzubi
+                'alayhim wa lad-dallin
+              </p>
+            </div>
+            <!--  -->
+            <div class="p-4 bg-green-50 rounded-lg penjelasan-item" data-gerakan="ayat_pendek" style="display: none">
+              <h3 class="font-bold text-purple-800">4. Membaca Surah Pendek</h3>
+              <p class="mt-2">Berdiri tegak dan membaca surah-surah Pendek.</p>
+              <br />
+              <p>
+                وَالضُّحٰىۙوَالَّيْلِ اِذَا سَجٰىۙمَا وَدَّعَكَ رَبُّكَ وَمَا قَلٰىۗوَلَلْاٰخِرَةُ خَيْرٌ لَّكَ مِنَ الْاُوْلٰىۗوَلَسَوْفَ يُعْطِيْكَ رَبُّكَ فَتَرْضٰىۗ اَلَمْ يَجِدْكَ يَتِيْمًا
+                فَاٰوٰىۖ وَوَجَدَكَ ضَاۤلًّا فَهَدٰىۖ وَوَجَدَكَ عَاۤىِٕلًا فَاَغْنٰىۗفَاَمَّاالْيَتِيْمَ فَلَا تَقْهَرْۗ وَاَمَّا السَّاۤىِٕلَ فَلَا تَنْهَرْ وَاَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ
+              </p>
+              <br />
+              <p><b>Latin</b></p>
+              <p>
+                wadl-dluḫâ wal-laili idzâ sajâmâ wadda‘aka rabbuka wa mâ qalâwa lal-âkhiratu khairul laka minal-ûlâwa lasaufa yu‘thîka rabbuka fa tardlâa lam yajidka yatîman fa âwâwa wajadaka dlâllan
+                fa hadâwa wajadaka ‘â'ilan fa aghnâfa ammal-yatîma fa lâ taq-harwa ammas-sâ'ila fa lâ tan-harwa ammâ bini‘mati rabbika fa ḫaddits
               </p>
             </div>
             <!--  -->
@@ -334,20 +389,20 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-purple-800 to-indigo-800 text-white py-8 mt-12">
+    <footer class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-8 mt-12">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-4 md:mb-0">
-            <h3 class="text-xl font-bold mb-2">Tata Cara Sholat Muhammadiyah</h3>
-            <p class="text-green-200">Berdasarkan Himpunan Putusan Tarjih</p>
+            <h3 class="text-xl font-bold mb-2">Tata Cara Sholat Anak</h3>
+            <p class="text-blue-200">Berdasarkan Himpunan Putusan Tarjih Muhammadiyah</p>
           </div>
           <div class="flex space-x-4">
-            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
-            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="#" class="text-green-200 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
           </div>
         </div>
-        <div class="border-t border-green-800 mt-6 pt-6 text-center text-green-300">
+        <div class="border-t border-blue-800 mt-6 pt-6 text-center text-blue-300">
           <p>&copy; 2025 Project Web Tata Cara Sholat - Muhammadiyah</p>
         </div>
       </div>
@@ -363,17 +418,34 @@
         const nextBtn = document.getElementById('next-btn');
         const currentImage = document.getElementById('current-image');
         const imageCaption = document.getElementById('image-caption');
+        const audioPlayer = document.getElementById('audio-player');
 
         // Data gambar untuk setiap gerakan sholat (tidak termasuk video)
         const gambarGerakan = {
           takbir: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/takbir.jpg', caption: 'Takbiratul Ihram' },
           berdiri: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/berdiri.jpg', caption: 'Berdiri' },
+          alfatihah: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/berdiri.jpg', caption: 'Membaca Al-Fatihah' },
+          ayat_pendek: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/berdiri.jpg', caption: 'Membaca Surah Pendek' },
           ruku: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/rukuk.jpg', caption: "Ruku'" },
-          itidal: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/takbir.jpg', caption: "i'tidal" },
+          itidal: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/takbir.jpg', caption: "I'tidal" },
           sujud: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/sujud.jpg', caption: 'Sujud' },
           duduk: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/duduk.jpg', caption: 'Duduk di Antara Dua Sujud' },
           tahiyat: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/tahiyat.jpg', caption: 'Tahiyat Akhir' },
           salam: { src: 'https://agungsaputra231230003.github.io/UAS-AIK-4/fotoAnakAnak/salam.jpg', caption: 'Salam' },
+        };
+
+        // Data audio untuk setiap gerakan sholat (versi anak-anak)
+        const audioGerakan = {
+          takbir: 'audio-anak/takbir.mp3',
+          berdiri: 'audio-anak/berdiri.mp3',
+          alfatihah: 'audio-anak/alfatihah.mp3',
+          ayat_pendek: 'audio-anak/ayat_pendek.mp3',
+          ruku: 'audio-anak/ruku.mp3',
+          itidal: 'audio-anak/itidal.mp3',
+          sujud: 'audio-anak/ruku.mp3',
+          duduk: 'audio-anak/duduk.mp3',
+          tahiyat: 'audio-anak/tahiyat.mp3',
+          salam: 'audio-anak/salam.mp3'
         };
 
         let activeIndex = 0;
@@ -387,8 +459,8 @@
           activeIndex = index;
 
           // Update active item di sidebar (termasuk styling untuk semua item)
-          semuaGerakanItems.forEach((item) => item.classList.remove('active', 'border-green-500'));
-          gerakanSholatItems[activeIndex].classList.add('active', 'border-green-500');
+          semuaGerakanItems.forEach((item) => item.classList.remove('active', 'border-blue-500'));
+          gerakanSholatItems[activeIndex].classList.add('active', 'border-blue-500');
 
           // Scroll ke item yang aktif di sidebar
           gerakanSholatItems[activeIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -410,6 +482,16 @@
             currentImage.src = gambarGerakan[gerakanAktif].src;
             currentImage.alt = gambarGerakan[gerakanAktif].caption;
             imageCaption.textContent = gambarGerakan[gerakanAktif].caption;
+          }
+
+          // Update audio player
+          if (audioGerakan[gerakanAktif]) {
+            const audioSource = audioPlayer.querySelector('source');
+            audioSource.src = audioGerakan[gerakanAktif];
+            audioPlayer.load();
+            
+            // Jika ingin audio otomatis diputar saat gerakan berubah
+            // audioPlayer.play().catch(e => console.log("Autoplay prevented:", e));
           }
         }
 

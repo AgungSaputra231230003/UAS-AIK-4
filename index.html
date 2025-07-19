@@ -83,6 +83,20 @@
                 <p class="text-sm text-gray-600">Sikap awal</p>
               </div>
             </div>
+            <div class="p-3 rounded-lg bg-green-50 border border-green-200 flex items-center cursor-pointer gerakan-item" data-gerakan="alfatihah">
+              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="alfatihah" class="w-16 h-16 rounded-lg object-cover" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-purple-800">Al-Fatihah</h3>
+                <p class="text-sm text-gray-600">Membaca surah Al-Fatihah</p>
+              </div>
+            </div>
+            <div class="p-3 rounded-lg bg-green-50 border border-green-200 flex items-center cursor-pointer gerakan-item" data-gerakan="ayat_pendek">
+              <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="ayat_pendek" class="w-16 h-16 rounded-lg object-cover" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-purple-800">Membaca Surah Pendek</h3>
+                <p class="text-sm text-gray-600">Membaca surah Pendek (misalnya : ad dhuha)</p>
+              </div>
+            </div>
 
             <div class="p-3 rounded-lg bg-green-50 border border-green-200 flex items-center cursor-pointer gerakan-item" data-gerakan="ruku">
               <img src="https://images.unsplash.com/photo-1587617425953-9075d28b8c46?q=80&w=200" alt="Ruku" class="w-16 h-16 rounded-lg object-cover" />
@@ -197,35 +211,39 @@
               <div class="bg-white p-2 rounded-lg shadow">
                 <img id="current-image" src="" alt="Gerakan Sholat" class="w-80 h-80 object-cover rounded-lg" />
                 <p id="image-caption" class="text-center mt-2 text-sm font-medium">Takbiratul Ihram</p>
+                <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-volume-up mr-2"></i> Panduan Audio Sholat</h2>
+                <div class="md:grid-cols-2 gap-4">
+                  <div class="bg-amber-100 rounded-lg p-4">
+                    <h3 class="font-bold text-purple-800 flex items-center pl-5"><i class="fas fa-male mr-2"></i> Dewasa (Pria)</h3>
+                    <audio id="audio-player" controls class="w-full mt-2">
+                      <source src="" type="audio/mp3" />
+                      Browser tidak mendukung audio.
+                    </audio>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Audio Player Section -->
           <div class="p-6 border-b">
-            <h2 class="text-xl font-bold text-purple-800 mb-4 flex items-center"><i class="fas fa-volume-up mr-2"></i> Panduan Audio Sholat</h2>
-            <div class=" md:grid-cols-2 gap-4">
-              <div class="bg-amber-100 rounded-lg p-4">
-                <h3 class="font-bold text-purple-800 flex items-center pl-5"><i class="fas fa-male mr-2"></i> Dewasa (Pria)</h3>
-                <audio controls class="w-full mt-2">
-                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
-                  Browser tidak mendukung audio.
-                </audio>
-              </div>
-              <!-- <div class="bg-amber-100 rounded-lg p-4">
-                <h3 class="font-bold text-purple-800 flex items-center"><i class="fas fa-child mr-2"></i> Anak-anak</h3>
-                <audio controls class="w-full mt-2">
-                  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3" />
-                  Browser tidak mendukung audio.
-                </audio>
-              </div> -->
-            </div>
+            <!-- <div class="bg-amber-100 rounded-lg p-4">
+              <h3 class="font-bold text-purple-800 flex items-center"><i class="fas fa-child mr-2"></i> Anak-anak</h3>
+              <audio controls class="w-full mt-2">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3" />
+                Browser tidak mendukung audio.
+              </audio>
+            </div> -->
           </div>
 
           <!-- Navigation Buttons -->
           <div class="p-6 flex justify-between">
-            <button id="prev-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center transition"><i class="fas fa-arrow-left mr-2"></i> Sebelumnya</button>
-            <button id="next-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center transition">Selanjutnya <i class="fas fa-arrow-right ml-2"></i></button>
+            <button id="prev-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center transition">
+              <i class="fas fa-arrow-left mr-2"></i> Sebelumnya
+            </button>
+            <button id="next-btn" class="bg-gradient-to-r from-purple-800 to-indigo-800 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center transition">
+              Selanjutnya <i class="fas fa-arrow-right ml-2"></i>
+            </button>
           </div>
         </div>
 
@@ -251,6 +269,38 @@
               <p>
                 Alla-humma ba-id baini-wa baina khatha-ya-ya kama-ba-adta bainal masyriqi wal maghrib. Alla-humma naqqini- minal khatha-ya- kama-yunaqqats tsaubul abyadlu minad danas. Alla-hummaghsil
                 khatha-ya-ya bilma-i wats tsalji wal barad.
+              </p>
+            </div>
+            <!--  -->
+            <div class="p-4 bg-green-50 rounded-lg penjelasan-item" data-gerakan="alfatihah" style="display: none">
+              <h3 class="font-bold text-purple-800">3. Al-fatihah</h3>
+              <p class="mt-2">Berdiri tegak dan membaca surah Al-fatihah.</p>
+              <br />
+              <p>
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ الرَّحْمَنِ الرَّحِيمِ مَالِكِ يَوْمِ الدِّينِ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ صِرَاطَ الَّذِينَ
+                أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+              </p>
+              <br />
+              <p><b>Latin</b></p>
+              <p>
+                Alhamdu lillahi rabbil 'alamin. Arrahmanirrahim. Maliki yawmiddin. Iyyaka na'budu wa iyyaka nasta'in. Ihdinas-siratal-mustaqim. Siratal-ladhina an'amta 'alayhim ghayril-maghzubi
+                'alayhim wa lad-dallin
+              </p>
+            </div>
+            <!--  -->
+            <div class="p-4 bg-green-50 rounded-lg penjelasan-item" data-gerakan="ayat_pendek" style="display: none">
+              <h3 class="font-bold text-purple-800">4. Membaca Surah Pendek</h3>
+              <p class="mt-2">Berdiri tegak dan membaca surah-surah Pendek.</p>
+              <br />
+              <p>
+                وَالضُّحٰىۙوَالَّيْلِ اِذَا سَجٰىۙمَا وَدَّعَكَ رَبُّكَ وَمَا قَلٰىۗوَلَلْاٰخِرَةُ خَيْرٌ لَّكَ مِنَ الْاُوْلٰىۗوَلَسَوْفَ يُعْطِيْكَ رَبُّكَ فَتَرْضٰىۗ اَلَمْ يَجِدْكَ يَتِيْمًا
+                فَاٰوٰىۖ وَوَجَدَكَ ضَاۤلًّا فَهَدٰىۖ وَوَجَدَكَ عَاۤىِٕلًا فَاَغْنٰىۗفَاَمَّاالْيَتِيْمَ فَلَا تَقْهَرْۗ وَاَمَّا السَّاۤىِٕلَ فَلَا تَنْهَرْ وَاَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ
+              </p>
+              <br />
+              <p><b>Latin</b></p>
+              <p>
+                wadl-dluḫâ wal-laili idzâ sajâmâ wadda‘aka rabbuka wa mâ qalâwa lal-âkhiratu khairul laka minal-ûlâwa lasaufa yu‘thîka rabbuka fa tardlâa lam yajidka yatîman fa âwâwa wajadaka dlâllan
+                fa hadâwa wajadaka ‘â'ilan fa aghnâfa ammal-yatîma fa lâ taq-harwa ammas-sâ'ila fa lâ tan-harwa ammâ bini‘mati rabbika fa ḫaddits
               </p>
             </div>
             <!--  -->
@@ -364,17 +414,34 @@
         const nextBtn = document.getElementById('next-btn');
         const currentImage = document.getElementById('current-image');
         const imageCaption = document.getElementById('image-caption');
+        const audioPlayer = document.getElementById('audio-player');
 
         // Data gambar untuk setiap gerakan sholat (tidak termasuk video)
         const gambarGerakan = {
           takbir: { src: './fotoDewasa/takbir.jpg', caption: 'Takbiratul Ihram' },
           berdiri: { src: './fotoDewasa/berdiri.jpg', caption: 'Berdiri' },
+          alfatihah: { src: './fotoDewasa/berdiri.jpg', caption: 'alfatihah' },
+          ayat_pendek: { src: './fotoDewasa/berdiri.jpg', caption: 'ayat_pendek' },
           ruku: { src: './fotoDewasa/rukuk.jpg', caption: "Ruku'" },
           itidal: { src: './fotoDewasa/takbir.jpg', caption: "i'tidal" },
           sujud: { src: './fotoDewasa/sujud.jpg', caption: 'Sujud' },
           duduk: { src: './fotoDewasa/duduk.jpg', caption: 'Duduk di Antara Dua Sujud' },
           tahiyat: { src: './fotoDewasa/tahiyat.jpg', caption: 'Tahiyat Akhir' },
           salam: { src: './fotoDewasa/salam.jpg', caption: 'Salam' },
+        };
+
+        // Data audio untuk setiap gerakan sholat
+        const audioGerakan = {
+          takbir: './audio/takbir.mp3',
+          berdiri: './audio/berdiri.mp3',
+          alfatihah: './audio/alfatihah.mp3',
+          ayat_pendek: './audio/ayat_pendek.mp3',
+          ruku: './audio/ruku.mp3',
+          itidal: './audio/itidal.mp3',
+          sujud: './audio/ruku.mp3',
+          duduk: './audio/duduk.mp3',
+          tahiyat: './audio/tahiyat.mp3',
+          salam: './audio/salam.mp3',
         };
 
         let activeIndex = 0;
@@ -411,6 +478,16 @@
             currentImage.src = gambarGerakan[gerakanAktif].src;
             currentImage.alt = gambarGerakan[gerakanAktif].caption;
             imageCaption.textContent = gambarGerakan[gerakanAktif].caption;
+          }
+
+          // Update audio player
+          if (audioGerakan[gerakanAktif]) {
+            const audioSource = audioPlayer.querySelector('source');
+            audioSource.src = audioGerakan[gerakanAktif];
+            audioPlayer.load();
+
+            // Jika ingin audio otomatis diputar saat gerakan berubah
+            // audioPlayer.play().catch(e => console.log("Autoplay prevented:", e));
           }
         }
 
